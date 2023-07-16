@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class NotificationContainer extends StatelessWidget {
   NotificationContainer({this.containerChild, this.onTap});
 
-  String? containerChild;
-  Function()? onTap;
+  final String? containerChild;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {

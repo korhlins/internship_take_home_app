@@ -4,8 +4,8 @@ import 'package:internship_take_home_app/view/constants/styles.dart';
 class TennisQuote extends StatelessWidget {
   TennisQuote({this.header, this.quote});
 
-  String? quote;
-  String? header;
+  final String? quote;
+  final String? header;
 
   @override
   Widget build(BuildContext context) {

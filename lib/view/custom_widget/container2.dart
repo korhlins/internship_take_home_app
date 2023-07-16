@@ -4,7 +4,7 @@ import 'package:internship_take_home_app/view/constants/styles.dart';
 class Container2 extends StatelessWidget {
   Container2({this.containerText});
 
-  String? containerText;
+  final String? containerText;
 
   @override
   Widget build(BuildContext context) {

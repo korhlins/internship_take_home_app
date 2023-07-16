@@ -3,11 +3,10 @@ import 'package:internship_take_home_app/view/components/complete_your_profile_s
 import 'package:internship_take_home_app/view/components/features.dart';
 import 'package:internship_take_home_app/view/components/header.dart';
 import 'package:internship_take_home_app/view/components/tennis_quote.dart';
-import 'package:internship_take_home_app/view/screens/home_screen.dart';
 
 class HomeScreenContent extends StatefulWidget {
   HomeScreenContent({this.onTap});
-  Function()? onTap;
+  final Function()? onTap;
 
   @override
   State<HomeScreenContent> createState() => _HomeScreenContentState();

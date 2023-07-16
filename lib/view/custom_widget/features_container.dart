@@ -4,8 +4,8 @@ import 'package:internship_take_home_app/view/constants/styles.dart';
 class FeaturesContainer extends StatelessWidget {
   FeaturesContainer({this.containerIconPath, this.containerText});
 
-  String? containerIconPath;
-  String? containerText;
+  final String? containerIconPath;
+  final String? containerText;
 
   @override
   Widget build(BuildContext context) {

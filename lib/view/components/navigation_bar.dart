@@ -6,7 +6,7 @@ import 'package:internship_take_home_app/view/screens/home_screen.dart';
 class BottomNavBar extends StatefulWidget {
   BottomNavBar({this.isNavBarVisible});
   static int currentIndex = 0;
-  bool? isNavBarVisible;
+  final bool? isNavBarVisible;
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
