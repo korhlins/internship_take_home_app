@@ -15,7 +15,6 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
-    print(widget.isNavBarVisible!);
     return AnimatedContainer(
       duration: const Duration(milliseconds: 200),
       height: widget.isNavBarVisible! ? kToolbarHeight : 0,

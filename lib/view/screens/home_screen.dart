@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return () {
       setState(() {
         HomeScreen.isNavBarVisible = !(HomeScreen.isNavBarVisible);
-        print(HomeScreen.isNavBarVisible);
       });
     };
   }
@@ -44,7 +43,6 @@ class _HomeScreenState extends State<HomeScreen> {
             onPageChanged: (index) {
               setState(() {
                 BottomNavBar.currentIndex = index;
-                print(HomeScreen.isNavBarVisible);
               });
             },
             children: screens,
