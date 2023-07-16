@@ -6,8 +6,8 @@ import 'package:internship_take_home_app/view/components/tennis_quote.dart';
 import 'package:internship_take_home_app/view/screens/home_screen.dart';
 
 class HomeScreenContent extends StatefulWidget {
-  HomeScreenContent({this.isNavBarVisible});
-  bool? isNavBarVisible;
+  HomeScreenContent({this.onTap});
+  Function()? onTap;
 
   @override
   State<HomeScreenContent> createState() => _HomeScreenContentState();
@@ -18,11 +18,7 @@ class _HomeScreenContentState extends State<HomeScreenContent> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: GestureDetector(
-            onTap: () {
-              setState(() {
-                widget.isNavBarVisible = !(widget.isNavBarVisible!);
-              });
-            },
+            onTap: widget.onTap!,
             child: SingleChildScrollView(
                 child: Padding(
               padding: const EdgeInsets.only(top: 88, right: 32, left: 32),

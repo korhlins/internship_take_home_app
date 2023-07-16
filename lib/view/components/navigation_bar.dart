@@ -17,7 +17,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     print(widget.isNavBarVisible!);
     return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 200),
       height: widget.isNavBarVisible! ? kToolbarHeight : 0,
       child: widget.isNavBarVisible!
           ? Container(
@@ -31,82 +31,84 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 ],
               ),
               child: Scaffold(
-                  bottomNavigationBar: BottomNavigationBar(
-                selectedLabelStyle: kTextStyle.copyWith(
-                  fontWeight: FontWeight.w500,
+                  bottomNavigationBar: ListView(shrinkWrap: true, children: [
+                BottomNavigationBar(
+                  selectedLabelStyle: kTextStyle.copyWith(
+                    fontWeight: FontWeight.w500,
+                  ),
+                  showUnselectedLabels: true,
+                  selectedItemColor: const Color(0xFF0E0E0E),
+                  unselectedItemColor: const Color(0xFFCFCFCF),
+                  currentIndex: BottomNavBar.currentIndex,
+                  items: [
+                    BottomNavigationBarItem(
+                        activeIcon: const ImageIcon(
+                          AssetImage('images/Group 34521.png'),
+                          color: Color(0xFFCEF47B),
+                          size: 24,
+                        ),
+                        icon: const ImageIcon(
+                          AssetImage('images/Group 34521.png'),
+                          color: Color(0xFFCFCFCF),
+                          size: 24,
+                        ),
+                        label: NavBarLabel.Home.name),
+                    BottomNavigationBarItem(
+                        activeIcon: const ImageIcon(
+                          AssetImage('images/Group 34525.png'),
+                          color: Color(0xFFCEF47B),
+                          size: 24,
+                        ),
+                        icon: const ImageIcon(
+                          AssetImage('images/Group 34525.png'),
+                          color: Color(0xFFCFCFCF),
+                          size: 24,
+                        ),
+                        label: NavBarLabel.Matches.name),
+                    BottomNavigationBarItem(
+                        activeIcon: const ImageIcon(
+                          AssetImage('images/Group 34526.png'),
+                          color: Color(0xFFCEF47B),
+                          size: 24,
+                        ),
+                        icon: const ImageIcon(
+                          AssetImage('images/Group 34526.png'),
+                          color: Color(0xFFCFCFCF),
+                          size: 24,
+                        ),
+                        label: NavBarLabel.Clubs.name),
+                    BottomNavigationBarItem(
+                        activeIcon: const ImageIcon(
+                          AssetImage('images/Group 34527.png'),
+                          color: Color(0xFFCEF47B),
+                          size: 24,
+                        ),
+                        icon: const ImageIcon(
+                          AssetImage('images/Group 34527.png'),
+                          color: Color(0xFFCFCFCF),
+                          size: 24,
+                        ),
+                        label: NavBarLabel.Buddies.name),
+                    BottomNavigationBarItem(
+                        activeIcon: const ImageIcon(
+                          AssetImage('images/Group 34528.png'),
+                          color: Color(0xFFCEF47B),
+                          size: 24,
+                        ),
+                        icon: const ImageIcon(
+                          AssetImage('images/Group 34528.png'),
+                          color: Color(0xFFCFCFCF),
+                          size: 24,
+                        ),
+                        label: NavBarLabel.Profile.name),
+                  ],
+                  onTap: (index) {
+                    setState(() {
+                      HomeScreen.pageController.jumpToPage(index);
+                    });
+                  },
                 ),
-                showUnselectedLabels: true,
-                selectedItemColor: const Color(0xFF0E0E0E),
-                unselectedItemColor: const Color(0xFFCFCFCF),
-                currentIndex: BottomNavBar.currentIndex,
-                items: [
-                  BottomNavigationBarItem(
-                      activeIcon: const ImageIcon(
-                        AssetImage('images/Group 34521.png'),
-                        color: Color(0xFFCEF47B),
-                        size: 24,
-                      ),
-                      icon: const ImageIcon(
-                        AssetImage('images/Group 34521.png'),
-                        color: Color(0xFFCFCFCF),
-                        size: 24,
-                      ),
-                      label: NavBarLabel.Home.name),
-                  BottomNavigationBarItem(
-                      activeIcon: const ImageIcon(
-                        AssetImage('images/Group 34525.png'),
-                        color: Color(0xFFCEF47B),
-                        size: 24,
-                      ),
-                      icon: const ImageIcon(
-                        AssetImage('images/Group 34525.png'),
-                        color: Color(0xFFCFCFCF),
-                        size: 24,
-                      ),
-                      label: NavBarLabel.Matches.name),
-                  BottomNavigationBarItem(
-                      activeIcon: const ImageIcon(
-                        AssetImage('images/Group 34526.png'),
-                        color: Color(0xFFCEF47B),
-                        size: 24,
-                      ),
-                      icon: const ImageIcon(
-                        AssetImage('images/Group 34526.png'),
-                        color: Color(0xFFCFCFCF),
-                        size: 24,
-                      ),
-                      label: NavBarLabel.Clubs.name),
-                  BottomNavigationBarItem(
-                      activeIcon: const ImageIcon(
-                        AssetImage('images/Group 34527.png'),
-                        color: Color(0xFFCEF47B),
-                        size: 24,
-                      ),
-                      icon: const ImageIcon(
-                        AssetImage('images/Group 34527.png'),
-                        color: Color(0xFFCFCFCF),
-                        size: 24,
-                      ),
-                      label: NavBarLabel.Buddies.name),
-                  BottomNavigationBarItem(
-                      activeIcon: const ImageIcon(
-                        AssetImage('images/Group 34528.png'),
-                        color: Color(0xFFCEF47B),
-                        size: 24,
-                      ),
-                      icon: const ImageIcon(
-                        AssetImage('images/Group 34528.png'),
-                        color: Color(0xFFCFCFCF),
-                        size: 24,
-                      ),
-                      label: NavBarLabel.Profile.name),
-                ],
-                onTap: (index) {
-                  setState(() {
-                    HomeScreen.pageController.jumpToPage(index);
-                  });
-                },
-              )),
+              ])),
             )
           : null,
     );
